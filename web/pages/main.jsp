@@ -13,14 +13,13 @@
         <h3>
             <%=request.getParameter("username")%>
         </h3>
+
         <h3>
             ${param["password"]}
         </h3>
         <%
-
-//        TestConneciton tc = new TestConneciton();
-//        tc.check();
-
-%>
+        TestConneciton tc = new TestConneciton();
+        tc.check();
+        %>
     </body>
 </html>
