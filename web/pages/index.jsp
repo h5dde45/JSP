@@ -31,7 +31,7 @@
             </div>
 
             <div class="footer">
-                 2016 г
+                2016 г
             </div>
         </div>
 
