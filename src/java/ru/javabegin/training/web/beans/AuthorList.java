@@ -11,7 +11,7 @@ import ru.javabegin.training.web.db.Database;
 
 public class AuthorList {
 
-    private ArrayList<Author> authorList = new ArrayList<>();
+    private ArrayList<Author> authorList = new ArrayList<Author>();
 
     private ArrayList<Author> getAuthors() {
         Statement stmt = null;
@@ -21,9 +21,10 @@ public class AuthorList {
             conn = Database.getConnection();
 
             stmt = conn.createStatement();
-            rs = stmt.executeQuery("select * from author ORDER BY fio");
+            rs = stmt.executeQuery("select * from author order by fio");
             while (rs.next()) {
                 Author author = new Author();
+                author.setId(rs.getLong("id"));
                 author.setName(rs.getString("fio"));
                 authorList.add(author);
             }

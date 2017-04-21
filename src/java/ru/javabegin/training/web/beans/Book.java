@@ -1,11 +1,11 @@
 package ru.javabegin.training.web.beans;
 
-import java.awt.Image;
+import java.awt.*;
 import java.io.Serializable;
-import java.util.Date;
 
-public class Book implements Serializable{
+public class Book implements Serializable {
 
+    private long id;
     private String name;
     private byte[] content;
     private int pageCount;
@@ -15,6 +15,14 @@ public class Book implements Serializable{
     private int publishDate;
     private String publisher;
     private Image image;
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public long getId() {
+        return id;
+    }
 
     public String getName() {
         return name;
@@ -87,8 +95,6 @@ public class Book implements Serializable{
     public void setImage(Image image) {
         this.image = image;
     }
-    
-    
-    
-    
+
+
 }
