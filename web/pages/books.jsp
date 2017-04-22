@@ -22,6 +22,7 @@
             list = bookList.getBooksByGenre(genreId);
         } else if (request.getParameter("letter") != null) {
             String letter = request.getParameter("letter");
+            session.setAttribute("letter", letter);
             list = bookList.getBooksByLetter(letter);
         } else if (request.getParameter("search_string") != null) {
             String searchStr = request.getParameter("search_string");
@@ -36,8 +37,7 @@
         }
        %>
     <h5 style="text-align: left; margin-top:20px;">Найдено книг: <%=list.size() %> </h5>
-              <%  
-                session.setAttribute("currentBookList", list);
+              <%  session.setAttribute("currentBookList", list);
                 for (Book book : list) {
 
     %>
@@ -56,7 +56,7 @@
             <br><strong>Количество страниц:</strong> <%=book.getPageCount()%>
             <br><strong>Год издания:</strong> <%=book.getPublishDate()%>
             <br><strong>Автор:</strong> <%=book.getAuthor()%>
-            <p style="margin:10px;"> <a href="#">Читать</a></p>
+
         </div>
     </div>
 
