@@ -15,7 +15,7 @@
 
                 </div>
                 <div class="descr">
-                    <h3>Онлайн библиотека проекта javabegin.ru</h3>
+                    <h3>Онлайн библиотека проекта</h3>
                 </div>
                 <div class="search_form">
                     <form name="search_form" method="POST">

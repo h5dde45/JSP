@@ -25,7 +25,6 @@ public class BookList {
             conn = Database.getConnection();
 
             stmt = conn.createStatement();
-//            System.out.println(str);
             rs = stmt.executeQuery(str);
             while (rs.next()) {
                 Book book = new Book();
@@ -37,7 +36,7 @@ public class BookList {
                 book.setPageCount(rs.getInt("page_count"));
                 book.setPublishDate(rs.getInt("publish_year"));
                 book.setPublisher(rs.getString("publisher"));
-                book.setImage(new ImageIcon(rs.getBytes("image")).getImage());
+                book.setImage(rs.getBytes("image"));
                 bookList.add(book);
             }
 
@@ -72,10 +71,11 @@ public class BookList {
 
     public ArrayList<Book> getBooksByGenre(long id) {
         return getBooks("select b.id,b.name,b.isbn,b.page_count,b.publish_year, " +
-                "p.name as publisher, a.fio as author, g.name as genre, b.image from library.book b "
-                + "inner join library.author a on b.author_id=a.id "
-                + "inner join library.genre g on b.genre_id=g.id "
-                + "inner join library.publisher p on b.publisher_id=p.id "
+                "p.name as publisher, a.fio as author, g.name as genre," +
+                " b.image from book b "
+                + "inner join author a on b.author_id=a.id "
+                + "inner join genre g on b.genre_id=g.id "
+                + "inner join publisher p on b.publisher_id=p.id "
                 + "where genre_id=" + id + " order by b.name "
                 + "limit 0,5");
 

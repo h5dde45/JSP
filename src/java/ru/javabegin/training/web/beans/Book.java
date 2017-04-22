@@ -14,7 +14,7 @@ public class Book implements Serializable {
     private String author;
     private int publishDate;
     private String publisher;
-    private Image image;
+    private byte[] image;
 
     public void setId(long id) {
         this.id = id;
@@ -88,11 +88,11 @@ public class Book implements Serializable {
         this.publisher = publisher;
     }
 
-    public Image getImage() {
+    public byte[] getImage() {
         return image;
     }
 
-    public void setImage(Image image) {
+    public void setImage(byte[] image) {
         this.image = image;
     }
 
