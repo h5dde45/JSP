@@ -14,7 +14,7 @@
             <div class="content">
                 <p class="title"><span class="text"><img src="images/lib.png" width="76" height="77" hspace="10" vspace="10" align="middle"></span></p>
                 <p class="title">Онлайн библиотека</p>
-                <p class="text">Добро пожаловать в онлайн библиотеку из 6 книг</p>
+                <p class="text">Добро пожаловать в онлайн библиотеку из 9 книг</p>
                 <p class="text">Доступны функции поиска, сортировки...</p>
                 <p class="text">Почитать не получится(будет возможно в следующем проекте - Jsf)</p>
                 <p>&nbsp;</p>
